@@ -1,0 +1,19 @@
+higher	lower
+Amoebozoa	Amoebozoa
+Opisthokonta	Animalia, Fungi, Choanozoa
+Rhizaria	Chlorarachneae, Foraminifera
+Alveolata	Ciliophora
+Alveolata	Apicomplexa
+Alveolata	Dinophyceae
+Cryptophyta	Cryptophyta
+Haptophyta	Haptophyta
+Stramenopiles	Bigyra
+Stramenopiles	Bacillariophyceae
+Stramenopiles	Chrysophyceae
+Stramenopiles	Dictyochophyceae
+Stramenopiles	Pelagophyceae
+Stramenopiles	Pinguiophyceae
+Stramenopiles	Synurophyceae
+Archaeplastida	Chlorophyta
+Archaeplastida	Rhodophyta
+Archaeplastida	Glaucophyta
