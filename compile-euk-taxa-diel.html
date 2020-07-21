@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Re-calculate-DNA-and-RNA-sequence-abundances-for-diel-dataset---for-Coesel-et-al.">Re-calculate DNA and RNA sequence abundances for diel dataset - for Coesel et al.<a class="anchor-link" href="#Re-calculate-DNA-and-RNA-sequence-abundances-for-diel-dataset---for-Coesel-et-al.">&#182;</a></h3><p>SKH - 20-07-2020</p>
+<h3 id="Re-calculate-DNA-and-RNA-sequence-abundances-for-diel-dataset---for-Coesel-et-al.">Re-calculate DNA and RNA sequence abundances for diel dataset - for Coesel et al.<a class="anchor-link" href="#Re-calculate-DNA-and-RNA-sequence-abundances-for-diel-dataset---for-Coesel-et-al.">&#182;</a></h3><p>SKH - 21-07-2020</p>
 
 </div>
 </div>
@@ -13125,7 +13125,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Import taxa list to match </span>
@@ -13185,7 +13185,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">otu_table</span> <span class="o">&lt;-</span> <span class="nf">read.delim</span><span class="p">(</span><span class="s">&quot;OTUtable_Diel18S_ALOHA.txt&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="n">skip</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
@@ -13229,7 +13229,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># series of case_when statements</span>
@@ -13249,6 +13249,7 @@ div#notebook {
           <span class="n">lower</span> <span class="o">=</span> <span class="nf">case_when</span><span class="p">(</span>
         <span class="nf">grepl</span><span class="p">(</span><span class="s">&quot;Ciliophora&quot;</span><span class="p">,</span> <span class="n">Taxa</span><span class="p">)</span> <span class="o">~</span> <span class="s">&quot;Ciliophora&quot;</span><span class="p">,</span>
         <span class="nf">grepl</span><span class="p">(</span><span class="s">&quot;Dinophyceae&quot;</span><span class="p">,</span> <span class="n">Taxa</span><span class="p">)</span> <span class="o">~</span> <span class="s">&quot;Dinophyceae&quot;</span><span class="p">,</span>
+        <span class="nf">grepl</span><span class="p">(</span><span class="s">&quot;Syndinial&quot;</span><span class="p">,</span> <span class="n">Taxa</span><span class="p">)</span> <span class="o">~</span> <span class="s">&quot;Dinophyceae&quot;</span><span class="p">,</span>
         <span class="nf">grepl</span><span class="p">(</span><span class="s">&quot;Cryptophyt&quot;</span><span class="p">,</span> <span class="n">Taxa</span><span class="p">)</span> <span class="o">~</span> <span class="s">&quot;Cryptophyta&quot;</span><span class="p">,</span>
         <span class="nf">grepl</span><span class="p">(</span><span class="s">&quot;Haptophyt&quot;</span><span class="p">,</span> <span class="n">Taxa</span><span class="p">)</span> <span class="o">~</span> <span class="s">&quot;Haptophyta&quot;</span><span class="p">,</span>
         <span class="nf">grepl</span><span class="p">(</span><span class="s">&quot;Apicomplexa&quot;</span><span class="p">,</span> <span class="n">Taxa</span><span class="p">)</span> <span class="o">~</span> <span class="s">&quot;Apicomplexa&quot;</span><span class="p">,</span>
@@ -13278,7 +13279,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># View taxa lists</span>
@@ -13309,7 +13310,6 @@ div#notebook {
 </thead>
 <tbody>
 	<tr><td>Alveolata     </td><td>Dinophyceae                 </td></tr>
-	<tr><td>Alveolata     </td><td>OTHER                       </td></tr>
 	<tr><td>Alveolata     </td><td>Ciliophora                  </td></tr>
 	<tr><td>Stramenopiles </td><td>Chrysophyceae               </td></tr>
 	<tr><td>Opisthokonta  </td><td>Animalia, Fungi, Choanozoa  </td></tr>
@@ -13323,6 +13323,7 @@ div#notebook {
 	<tr><td>Archaeplastida</td><td>Chlorophyta                 </td></tr>
 	<tr><td>Archaeplastida</td><td>OTHER                       </td></tr>
 	<tr><td>Stramenopiles </td><td>Dictyochophyceae            </td></tr>
+	<tr><td>Alveolata     </td><td>OTHER                       </td></tr>
 	<tr><td>Stramenopiles </td><td>Bigyra                      </td></tr>
 	<tr><td>Cryptophyta   </td><td>Cryptophyta                 </td></tr>
 	<tr><td>Stramenopiles </td><td>Pinguiophyceae              </td></tr>
@@ -13379,7 +13380,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Summarise and calculate mean/std dev</span>
@@ -13426,12 +13427,12 @@ div#notebook {
 	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>1</th><td>Alveolata</td><td>Ciliophora </td><td>DNA</td><td>  2751.632</td><td> 1833.730</td><td> 1.412</td></tr>
-	<tr><th scope=row>2</th><td>Alveolata</td><td>Ciliophora </td><td>RNA</td><td> 25851.895</td><td>16315.878</td><td>16.416</td></tr>
-	<tr><th scope=row>3</th><td>Alveolata</td><td>Dinophyceae</td><td>DNA</td><td>107662.632</td><td>25676.990</td><td>55.228</td></tr>
-	<tr><th scope=row>4</th><td>Alveolata</td><td>Dinophyceae</td><td>RNA</td><td> 42582.842</td><td>16254.259</td><td>27.041</td></tr>
-	<tr><th scope=row>5</th><td>Alveolata</td><td>OTHER      </td><td>DNA</td><td> 21300.474</td><td> 9197.527</td><td>10.927</td></tr>
-	<tr><th scope=row>6</th><td>Alveolata</td><td>OTHER      </td><td>RNA</td><td>  5310.526</td><td> 2604.778</td><td> 3.372</td></tr>
+	<tr><th scope=row>1</th><td>Alveolata</td><td>Ciliophora </td><td>DNA</td><td>2.751632e+03</td><td> 1833.729994</td><td> 1.412</td></tr>
+	<tr><th scope=row>2</th><td>Alveolata</td><td>Ciliophora </td><td>RNA</td><td>2.585189e+04</td><td>16315.878023</td><td>16.416</td></tr>
+	<tr><th scope=row>3</th><td>Alveolata</td><td>Dinophyceae</td><td>DNA</td><td>1.288228e+05</td><td>30053.418028</td><td>66.082</td></tr>
+	<tr><th scope=row>4</th><td>Alveolata</td><td>Dinophyceae</td><td>RNA</td><td>4.788458e+04</td><td>18669.393370</td><td>30.407</td></tr>
+	<tr><th scope=row>5</th><td>Alveolata</td><td>OTHER      </td><td>DNA</td><td>1.402632e+02</td><td>   81.077358</td><td> 0.072</td></tr>
+	<tr><th scope=row>6</th><td>Alveolata</td><td>OTHER      </td><td>RNA</td><td>8.789474e+00</td><td>    9.009741</td><td> 0.006</td></tr>
 </tbody>
 </table>
 
@@ -13445,7 +13446,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Write RNA and DNA-based table</span>
@@ -13460,7 +13461,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">## END</span>
